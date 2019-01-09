@@ -16,7 +16,7 @@ class MagicDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        detailCollectionView.dataSource = self
         
         
      }
@@ -28,17 +28,16 @@ class MagicDetailViewController: UIViewController {
 
 extension MagicDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return magicDetial.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let detailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MagicDetailCell", for: indexPath) as? MagicDetailCell else {
             fatalError("MagicDetailCell error")
         }
-//        detailCell.cardName.text = magicDetial.name
-//        detailCell.language.text = 
-        let image = magicDetial[indexPath.row].imageUrl
-        //detailCell.configureDetailCell(magicDetail: image)
+
+        let magidDetail = magicDetial[indexPath.row]
+        detailCell.configureDetailCell(magicDetail: magidDetail)
         
         
         return detailCell

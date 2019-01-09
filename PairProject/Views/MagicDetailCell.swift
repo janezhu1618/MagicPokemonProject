@@ -26,6 +26,9 @@ class MagicDetailCell: UICollectionViewCell {
         
         
         detailActivity.startAnimating()
+        cardName.text = magicDetail.name
+        language.text = magicDetail.language
+        magicText.text = magicDetail.text
         
         ImageHelper.shared.fetchImage(urlString: magicDetail.imageUrl) { (appError, image) in
             if let appError = appError {

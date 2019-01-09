@@ -39,7 +39,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="155" height="229"/>
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KJn-KE-gWj">
-                                                    <rect key="frame" x="67" y="104" width="20" height="20"/>
+                                                    <rect key="frame" x="67.5" y="104.5" width="20" height="20"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                         </view>
@@ -184,24 +184,24 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" red="0.80952477329999994" green="0.80952477329999994" blue="0.80952477329999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qWD-sd-gel">
-                                    <size key="itemSize" width="138" height="213"/>
+                                    <size key="itemSize" width="130" height="173"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MagicCell" id="3Mo-Te-vKn" customClass="MagicCell" customModule="PairProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="138" height="213"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="173"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="138" height="213"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="173"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sbf-ML-fMN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="138" height="213"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sbf-ML-fMN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="131" height="196"/>
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="p3o-sl-2nZ">
-                                                    <rect key="frame" x="59" y="96.5" width="20" height="20"/>
+                                                    <rect key="frame" x="55" y="76.5" width="20" height="20"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                         </view>
@@ -214,6 +214,10 @@
                                             <constraint firstAttribute="bottom" secondItem="Sbf-ML-fMN" secondAttribute="bottom" id="oAN-4F-ssk"/>
                                             <constraint firstItem="p3o-sl-2nZ" firstAttribute="centerX" secondItem="Sbf-ML-fMN" secondAttribute="centerX" id="qyF-k4-yLv"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="magicActivity" destination="p3o-sl-2nZ" id="fES-fJ-JTM"/>
+                                            <outlet property="magicImage" destination="Sbf-ML-fMN" id="0AR-M2-0DZ"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -228,6 +232,9 @@
                         <viewLayoutGuide key="safeArea" id="41Y-7u-zEl"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Magic" image="magic" id="Msc-wL-TBt"/>
+                    <connections>
+                        <outlet property="magicCollectionView" destination="xce-sj-ul4" id="2zN-gI-a2p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJX-f7-8Av" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,7 +243,7 @@
         <!--Magic Detail View Controller-->
         <scene sceneID="YgB-TW-Je4">
             <objects>
-                <viewController title="Magic Detail View Controller" id="mCC-zm-bJm" customClass="MagicDetailViewController" customModule="PairProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MagicDetail" title="Magic Detail View Controller" id="mCC-zm-bJm" customClass="MagicDetailViewController" customModule="PairProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="8tM-as-vel">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -305,6 +312,13 @@
                                             <constraint firstItem="SDR-Wc-DVK" firstAttribute="centerX" secondItem="mlq-A3-I1g" secondAttribute="centerX" id="qrU-oX-3ub"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="N7q-JE-KhR" secondAttribute="trailing" constant="8" id="tgP-Dw-VL1"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="cardName" destination="N7q-JE-KhR" id="5cq-bA-mia"/>
+                                            <outlet property="detailActivity" destination="SDR-Wc-DVK" id="XXL-nG-a74"/>
+                                            <outlet property="language" destination="dxR-Qm-2np" id="fYx-71-g2L"/>
+                                            <outlet property="magicPicture" destination="mlq-A3-I1g" id="da4-LD-fbu"/>
+                                            <outlet property="magicText" destination="GSM-0p-q4j" id="nr4-fY-Kff"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -318,6 +332,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Vf-Mg-xLA"/>
                     </view>
+                    <connections>
+                        <outlet property="detailCollectionView" destination="bOs-LO-AQj" id="aYr-tB-VnP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsA-Kf-bBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

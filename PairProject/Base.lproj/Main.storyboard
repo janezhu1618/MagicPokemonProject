@@ -52,6 +52,10 @@
                                             <constraint firstAttribute="bottom" secondItem="u1I-gw-Vmi" secondAttribute="bottom" id="h8q-ls-kQk"/>
                                             <constraint firstItem="KJn-KE-gWj" firstAttribute="centerY" secondItem="u1I-gw-Vmi" secondAttribute="centerY" id="pQd-gG-qsd"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="pokemonActivityIndicator" destination="KJn-KE-gWj" id="gjO-al-lu9"/>
+                                            <outlet property="pokemonImage" destination="u1I-gw-Vmi" id="x4a-yQ-XCU"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -66,6 +70,9 @@
                         <viewLayoutGuide key="safeArea" id="wRV-Dg-YU5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pokemon" image="pokemon" id="YFO-bb-Yp6"/>
+                    <connections>
+                        <outlet property="pokemonCollection" destination="2Vs-6z-VdN" id="qIS-rW-tI6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fZ-Pw-O2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,11 +81,17 @@
         <!--Pokemon Detail View Controller-->
         <scene sceneID="BOd-Qv-m4Y">
             <objects>
-                <viewController title="Pokemon Detail View Controller" id="rOi-2U-mLY" customClass="PokemonDetailViewController" customModule="PairProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PokemonDetailViewController" title="Pokemon Detail View Controller" id="rOi-2U-mLY" customClass="PokemonDetailViewController" customModule="PairProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="Zuv-M2-Lm4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeW-87-Lq0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="rOi-2U-mLY" eventType="touchUpInside" id="9Iv-jP-4M1"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBM-rc-DMv">
                                 <rect key="frame" x="41.5" y="139.5" width="331" height="627"/>
                                 <subviews>
@@ -88,7 +101,7 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xfI-wo-My0">
                                         <rect key="frame" x="16.5" y="447" width="298" height="172"/>
                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bjR-Qh-Am6">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bjR-Qh-Am6">
                                             <size key="itemSize" width="270" height="150"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -96,27 +109,27 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokemonDetailCell" id="dl1-Lh-Wt8" customClass="PokemonDetailCell" customModule="PairProject" customModuleProvider="target">
-                                                <rect key="frame" x="14" y="0.0" width="270" height="150"/>
+                                                <rect key="frame" x="0.0" y="11" width="270" height="150"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="270" height="150"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zr2-lB-58l">
-                                                            <rect key="frame" x="8" y="12" width="254" height="23"/>
+                                                            <rect key="frame" x="8" y="57" width="254" height="23"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TBK-jR-6Bc">
-                                                            <rect key="frame" x="5" y="66" width="260" height="84"/>
+                                                            <rect key="frame" x="5" y="111" width="260" height="39"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Damage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfc-sN-ZmO">
-                                                            <rect key="frame" x="8" y="35" width="254" height="23"/>
+                                                            <rect key="frame" x="8" y="80" width="254" height="23"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -134,8 +147,13 @@
                                                     <constraint firstAttribute="bottom" secondItem="TBK-jR-6Bc" secondAttribute="bottom" id="f3Z-I3-sA0"/>
                                                     <constraint firstAttribute="trailing" secondItem="TBK-jR-6Bc" secondAttribute="trailing" constant="5" id="lJr-ei-9D7"/>
                                                     <constraint firstItem="nfc-sN-ZmO" firstAttribute="trailing" secondItem="dl1-Lh-Wt8" secondAttribute="trailingMargin" id="mcj-3H-Lxt"/>
-                                                    <constraint firstItem="zr2-lB-58l" firstAttribute="top" secondItem="dl1-Lh-Wt8" secondAttribute="topMargin" constant="-40" id="oMT-0d-1rj"/>
+                                                    <constraint firstItem="zr2-lB-58l" firstAttribute="top" secondItem="dl1-Lh-Wt8" secondAttribute="topMargin" constant="5" id="oMT-0d-1rj"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="pokemonCardDamage" destination="nfc-sN-ZmO" id="dwU-Ls-WNC"/>
+                                                    <outlet property="pokemonCardDetail" destination="TBK-jR-6Bc" id="VME-z8-pSs"/>
+                                                    <outlet property="pokemonCardName" destination="zr2-lB-58l" id="BSA-iW-Lme"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -158,15 +176,24 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DeW-87-Lq0" firstAttribute="leading" secondItem="j4v-1l-N02" secondAttribute="leading" id="Agz-Yz-yWY"/>
+                            <constraint firstItem="j4v-1l-N02" firstAttribute="trailing" secondItem="DeW-87-Lq0" secondAttribute="trailing" id="BKk-3U-fxe"/>
                             <constraint firstItem="KBM-rc-DMv" firstAttribute="width" secondItem="Zuv-M2-Lm4" secondAttribute="width" multiplier="0.8" id="K5x-Yz-bLh"/>
                             <constraint firstItem="sNH-6R-SOo" firstAttribute="centerY" secondItem="83L-iC-kHm" secondAttribute="centerY" id="cMz-z3-p0F"/>
                             <constraint firstItem="KBM-rc-DMv" firstAttribute="centerX" secondItem="j4v-1l-N02" secondAttribute="centerX" id="cpy-gt-4BS"/>
                             <constraint firstItem="KBM-rc-DMv" firstAttribute="centerY" secondItem="j4v-1l-N02" secondAttribute="centerY" id="nC8-bv-PZ0"/>
+                            <constraint firstItem="DeW-87-Lq0" firstAttribute="bottom" secondItem="j4v-1l-N02" secondAttribute="bottom" id="niL-5w-sKJ"/>
+                            <constraint firstItem="DeW-87-Lq0" firstAttribute="top" secondItem="j4v-1l-N02" secondAttribute="top" id="onj-l4-ImX"/>
                             <constraint firstItem="sNH-6R-SOo" firstAttribute="centerX" secondItem="83L-iC-kHm" secondAttribute="centerX" id="s8C-aH-fEA"/>
                             <constraint firstItem="KBM-rc-DMv" firstAttribute="height" secondItem="Zuv-M2-Lm4" secondAttribute="height" multiplier="0.7" id="zPX-eT-niX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j4v-1l-N02"/>
                     </view>
+                    <connections>
+                        <outlet property="pokemonCardCollectionView" destination="xfI-wo-My0" id="FLx-uF-1tu"/>
+                        <outlet property="pokemonCardImage" destination="83L-iC-kHm" id="YZg-Yv-n5U"/>
+                        <outlet property="pokemonCardImageActivityIndicator" destination="sNH-6R-SOo" id="5Tk-H9-jve"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUA-Gj-so7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -322,13 +349,20 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3H-If-bGw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="0.0"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="H3H-If-bGw" firstAttribute="leading" secondItem="7Vf-Mg-xLA" secondAttribute="leading" id="FiN-5D-C1v"/>
+                            <constraint firstItem="H3H-If-bGw" firstAttribute="top" secondItem="7Vf-Mg-xLA" secondAttribute="top" id="QhH-cR-ihB"/>
+                            <constraint firstItem="7Vf-Mg-xLA" firstAttribute="trailing" secondItem="H3H-If-bGw" secondAttribute="trailing" id="XSe-WD-zF7"/>
                             <constraint firstItem="bOs-LO-AQj" firstAttribute="height" secondItem="8tM-as-vel" secondAttribute="height" multiplier="0.6" id="bqC-oW-oDs"/>
                             <constraint firstItem="bOs-LO-AQj" firstAttribute="width" secondItem="8tM-as-vel" secondAttribute="width" multiplier="0.8" id="ewl-ge-nw6"/>
                             <constraint firstItem="bOs-LO-AQj" firstAttribute="centerY" secondItem="7Vf-Mg-xLA" secondAttribute="centerY" id="gAa-vc-3i7"/>
                             <constraint firstItem="bOs-LO-AQj" firstAttribute="centerX" secondItem="7Vf-Mg-xLA" secondAttribute="centerX" id="jPP-2T-QW9"/>
+                            <constraint firstItem="H3H-If-bGw" firstAttribute="bottom" secondItem="7Vf-Mg-xLA" secondAttribute="top" id="pCL-VA-dsc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Vf-Mg-xLA"/>
                     </view>

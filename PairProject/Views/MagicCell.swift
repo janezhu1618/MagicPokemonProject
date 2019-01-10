@@ -32,8 +32,4 @@ class MagicCell: UICollectionViewCell {
         self.magicActivity.stopAnimating()
     }
     
-    
-    
-    
-    
 }

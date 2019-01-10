@@ -21,7 +21,9 @@ class MagicDetailViewController: UIViewController {
         
      }
     
-
+    @IBAction func dismiss(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
    
 
 }

@@ -30,7 +30,7 @@ class MagicViewController: UIViewController {
             if let appError = appError {
                 print(appError.errorMessage())
             } else if let magic = magic {
-                self.magic = magic.cards
+                self.magic = magic.cards.filter{ $0.imageUrl != nil }
             
             }
         }

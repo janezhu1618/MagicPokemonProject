@@ -24,12 +24,12 @@ class MagicCell: UICollectionViewCell {
             if let appError = appError {
                 print(appError.errorMessage())
             } else if let image = image {
-                
+                self.magicActivity.stopAnimating()
                 self.magicImage.image = image
                 
             }
         }
-        self.magicActivity.stopAnimating()
+        self.magicActivity.hidesWhenStopped = true
     }
     
 }

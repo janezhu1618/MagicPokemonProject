@@ -350,7 +350,10 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3H-If-bGw">
-                                <rect key="frame" x="0.0" y="44" width="414" height="0.0"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="mCC-zm-bJm" eventType="touchUpInside" id="hA6-OV-KPu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -362,7 +365,7 @@
                             <constraint firstItem="bOs-LO-AQj" firstAttribute="width" secondItem="8tM-as-vel" secondAttribute="width" multiplier="0.8" id="ewl-ge-nw6"/>
                             <constraint firstItem="bOs-LO-AQj" firstAttribute="centerY" secondItem="7Vf-Mg-xLA" secondAttribute="centerY" id="gAa-vc-3i7"/>
                             <constraint firstItem="bOs-LO-AQj" firstAttribute="centerX" secondItem="7Vf-Mg-xLA" secondAttribute="centerX" id="jPP-2T-QW9"/>
-                            <constraint firstItem="H3H-If-bGw" firstAttribute="bottom" secondItem="7Vf-Mg-xLA" secondAttribute="top" id="pCL-VA-dsc"/>
+                            <constraint firstItem="H3H-If-bGw" firstAttribute="bottom" secondItem="7Vf-Mg-xLA" secondAttribute="bottom" id="pCL-VA-dsc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Vf-Mg-xLA"/>
                     </view>

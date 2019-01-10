@@ -34,11 +34,11 @@ class MagicDetailCell: UICollectionViewCell {
             if let appError = appError {
                 print(appError.errorMessage())
             } else if let image = image {
-                
+                self.detailActivity.stopAnimating()
                 self.magicPicture.image = image
-                
             }
         }
-        self.detailActivity.stopAnimating()
+        self.detailActivity.hidesWhenStopped = true
     }
+    
 }

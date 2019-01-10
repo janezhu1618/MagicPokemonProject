@@ -10,4 +10,7 @@ import UIKit
 
 class PokemonDetailCell: UICollectionViewCell {
     
+    @IBOutlet weak var pokemonCardName: UILabel!
+    @IBOutlet weak var pokemonCardDamage: UILabel!
+    @IBOutlet weak var pokemonCardDetail: UITextView!
 }
